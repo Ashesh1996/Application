@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration Form</title>
+<style>
+	
+	.stages {
+	font-size: 0;
+	text-align: justify;
+}
+
+.stages:after {
+	content: '';
+	display: inline-block;
+	font-size: 0;
+	text-align: justify;
+	width: 100%;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.stages label {
+	background: #ffffff;
+	border: solid 5px #c0c0c0;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0;
+	font-weight: 700;
+	height: 50px;
+	line-height: 50px;
+	position: relative;
+	text-align: center;
+	vertical-align: top;
+	width: 50px;
+	z-index: 1;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.stages label:after {
+	content: '\2713';
+	color: #0cc39f;
+	/*display: inline-block;*/
+	font-size: 16px;
+}
+
+#one:checked ~ .stages label[for="one"],
+#two:checked ~ .stages label[for="two"],
+#three:checked ~ .stages label[for="three"],
+#four:checked ~ .stages label[for="four"],
+#five:checked ~ .stages label[for="five"],
+#six:checked ~ .stages label[for="six"] {
+	border-color: #0cc39f;
+}
+
+.stages label.active{
+	border-color: purple !important;
+}
+
+#one:checked ~ .stages label,
+#two:checked ~ .stages label[for="one"] ~ label,
+#three:checked ~ .stages label[for="two"] ~ label,
+#four:checked ~ .stages label[for="three"] ~ label,
+#five:checked ~ .stages label[for="four"] ~ label,
+#six:checked ~ .stages label[for="five"] ~ label {
+	font-size: 1rem;
+}
+
+#one:checked ~ .stages label:after,
+#two:checked ~ .stages label[for="one"] ~ label:after,
+#three:checked ~ .stages label[for="two"] ~ label:after,
+#four:checked ~ .stages label[for="three"] ~ label:after,
+#five:checked ~ .stages label[for="four"] ~ label:after,
+#six:checked ~ .stages label[for="five"] ~ label:after {
+	display: none;
+}
+
+.progress > span {
+	background: #c0c0c0;
+	display: inline-block;
+	height: 5px;
+	transform: translateY(-2.75em);
+	transition: 0.3s;
+	width: 0;
+}
+
+#two:checked ~ .progress span {
+	width: calc(100% / 5 * 1);
+}
+
+#three:checked ~ .progress span {
+	width: calc(100% / 5 * 2);
+}
+
+#four:checked ~ .progress span {
+	width: calc(100% / 5 * 3);
+}
+
+#five:checked ~ .progress span {
+	width: calc(100% / 5 * 4);
+}
+
+#six:checked ~ .progress span {
+	width: calc(100% / 5 * 5);
+}
+
+.panels div {
+	display: none;
+}
+
+#one:checked ~ .panels [data-panel="one"],
+#two:checked ~ .panels [data-panel="two"],
+#three:checked ~ .panels [data-panel="three"],
+#four:checked ~ .panels [data-panel="four"],
+#five:checked ~ .panels [data-panel="five"],
+#six:checked ~ .panels [data-panel="six"] {
+	display: block;
+}
+/* Custom code for the demo */
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+	background-color: #0cc39f;
+	margin: 0;
+	padding: 0 2em;
+}
+
+a {
+	color: #0cc39f;
+}
+
+h2,
+h4 {
+	margin-top: 0;
+}
+
+.form {
+	 background: linear-gradient(to bottom, #33ccff 0%, #7b6871 100%);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+	margin: 40px auto 40px auto;
+	width: 500px;
+	padding: 20px;
+	
+}
+
+.panels div {
+	border-top: solid 1px #c0c0c0;
+	margin-bottom: 10px;
+	margin: 0px auto;
+
+}
+
+
+
+
+.btn {
+  background-color: #0cc39f;
+  border: 2px solid #fff;
+  color: #ffffff;
+  cursor: pointer;
+  padding:10px 20px; 
+  margin: 10px;
+  margin-right: 40%;
+  margin-left: 40%;
+ 
+
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+.content{
+	height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(117, 190, 218, 0.5);
+  color:#fff;
+  border:1px solid #fff;
+  text-transform: uppercase;
+	margin-bottom: 15px;
+	border-radius: 10px;
+}
+.content-add{
+	height: 70px;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: rgba(117, 190, 218, 0.5);
+ 	 color:#fff;
+  	border:1px solid #fff;
+  	text-transform: uppercase;
+  	border-radius: 10px;
+	resize: none;
+	margin-bottom: 15px;
+	}
+	.posi{
+    margin: 0 4px 10px 0px;
+    ;
+}
+
+
+
+
+.contento{
+	width:40%;
+	height: 40px;
+	box-sizing: border-box;
+	float: left;
+	margin-top: 36px;
+	background-color: rgba(117, 190, 218, 0.5);
+ 	 color:#fff;
+ 	 border:1px solid #fff;
+ 	 margin-bottom: 15px;
+ 	 border-radius: 10px;
+
+
+}
+.cont{
+	width:40%;
+	height: 40px;
+	box-sizing: border-box;
+	float: right;
+	margin-top: 15px;
+	background-color: rgba(117, 190, 218, 0.5);
+ 	 color:#fff;
+ 	 border:1px solid #fff;
+ 	 margin-bottom: 15px;
+ 	 border-radius: 10px;
+}
+
+
+
+
+
+/*//------------------------------------Respomsive Css-------------------------------------------//*/
+
+@media(max-width: 700px){
+	.form{
+		width: 80%;
+	}
+}
+@media(max-width: 480px){
+	.panels,p,.stages,h2,.progress{
+		width: 100%;
+
+	}
+	/*.form{
+		width: 80%;
+	}*/
+	.btn{
+		margin-left: 40%;
+		margin-right: 40%;
+	}
+}
+</style>
+<script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<form id="regForm" method="GET" action="document_page.php">
+<div class="form">
+	<h2>HSL Application Form</h2>
+	<p>Dear Volunteer/Member, we value the role of volunteers/members in our work and hope this turns out to be a fulfilling
+       and meaningful experience for you as well.</p>
+	<p>To make this possible please spare 5 minutes to fill this form.Information provided will be kept confidential.</p>
+
+	<input id="one" type="radio" name="stage"/>
+	<input id="two" type="radio" name="stage" />
+	<input id="three" type="radio" name="stage" />
+	<input id="four" type="radio" name="stage" />
+	<input id="five" type="radio" name="stage" />
+	<input id="six" type="radio" name="stage" />
+
+	<div class="stages">
+		<label for="one">1</label>
+		<label for="two">2</label>
+		<label for="three">3</label>
+		<label for="four">4</label>
+		<label for="five">5</label>
+		<label for="six">6</label>
+	</div>
+
+	<span class="progress"><span></span></span>
+
+	<div class="panels">
+		<div id="onetab" class="tab">
+			<h4>Personal Information</h4>
+			First Name
+			<input type="text" class="content" id="first_name"  />
+			Last Name
+			<input type="text" class="content" id="last_name" />
+			Date of Birth
+			<input type="date" class="content" id="date" >
+			Citizenship
+			<input type="text" placeholder="Citizenship" class="content" id="citi" >
+			Nationality
+			<input type="text" class="content" id="nation" >
+			<button type="button" class="btn" id="onetab-button">Next</button>
+		</div>
+		<div id="twotab" class="tab">
+			<h4>Contact Information</h4>
+			<label>Present Address</label>
+			<textarea class="content-add" id="address"></textarea>
+			<input type="checkbox" name="" class="posi" id="sameas">Same as Present Address  <br>
+			<label>Permanent Address</label>
+			<textarea class="content-add" id="address1"></textarea>
+			<label>State</label>
+			<input type="text" placeholder="state" class="content" id="state">
+			<label>Country</label>
+			<input type="text" placeholder="country" class="content" id="country">
+			<label>Pincode</label>
+			<input type="text" placeholder="pincode" class="content" id="pincode">
+			<label>Phone Number</label>
+			<input type="text" placeholder="Phone No" class="content" id="phoneno">
+			<label>Email Id</label>
+			<input type="text" placeholder="Email Id" class="content" id="mail">
+			<button type="button" class="btn" id="twotab-button">Next</button>
+		</div>
+		<div id="threetab" class="tab">
+			<h4>Education</h4>
+			<label>Course</label>
+			<input type="text" placeholder="Degree(held/pursuing)" id="course" class="content">
+			<label>University</label>
+			<input type="text" placeholder="University" id="univ" class="content">
+			<button type="button" class="btn" id="threetab-button">Next</button>
+		</div>
+		<div id="fourtab" class="tab">
+			<h4>Work Eperience</h4>
+			<label>Years of Experience</label>
+			<input type="text" placeholder="No of Years (Mention in Number)" id="yoe" class="content" >
+			<label>Industry/IT sector</label>
+			<input type="text" placeholder="Main Industry" id="sector" class="content">
+			<button type="button" class="btn" id="fourtab-button">Next</button>
+
+		</div>
+		<div id="fivetab" class="tab">
+			<h4>Language Profeciency</h4>
+			<label>Languages Known</label>
+			<input type="text" placeholder="Languages that you can speak & write" id="lang" class="content" />
+			<label>IT skills</label>
+			<input type="text" placeholder="IT skill" id="skill" class="content">
+			<button type="button" class="btn" id="fivetab-button">Next</button>
+		</div>
+		<div id="sixtab" class="tab">
+			<h4>Area of Interest</h4>
+			<label>Other Interests</label>
+			<input type="text" placeholder="Programming Area" id="program" class="content">
+			<label>NGO Work</label>
+			<input type="text" placeholder="Yes/No" id="work" class="content">
+			<label>Location of your work</label>
+			<input type="text" placeholder="Location" id="loc" class="content">
+			<label><b>Time Devotion:</b></label>
+
+			<input type="text" placeholder="No of Days in a week" id="day" class="contento">
+			<input type="text" placeholder="No of Hours in a week" id="hour" class="cont">
+			<h6>Time period is of minimum of 10 vorking days</h6>
+			<button type="button" class="btn" id="sixtab-button">Submit</button>
+		</div>
+	</div>
+	<!-- <button type="button" id="n-button">Next</button> -->
+
+</div>
+</form>
+<script>
+	$(document).ready(function(){
+	// alert();
+	$("#one").prop("checked", true);
+	if($("#one").prop("checked")== true){
+		$("#onetab").show();
+		$("#twotab").hide();
+                $("#threetab").hide();
+                $("#fourtab").hide();
+                $("#fivetab").hide();
+                $("#sixtab").hide();
+	}
+	$("#one").click(function(){
+		$("#onetab").show();
+		$("#twotab").hide();
+                $("#threetab").hide();
+                $("#fourtab").hide();
+                $("#fivetab").hide();
+                $("#sixtab").hide();
+	})
+
+	$("#onetab-button").click(function(){
+	       var first_name = $("#first_name");
+	       var last_name = $("#last_name");
+	       var date=$("#date");
+	       var citi=$("#citi");
+	       var nation=$("#nation");
+
+	       if(first_name.val()==""){
+                alert("please enter First name");
+                first_name.focus();
+                return false;
+                }
+                else if(last_name.val()==""){
+        	alert("please enter Last name");
+        	last_name.focus();
+        	return false;
+                }
+                else if(date.val()==""){
+        	alert("please enter DOB");
+        	date.focus();
+        	return false;
+                }
+                else if(citi.val()==""){
+        	alert("please enter Citizenship");
+        	citi.focus();
+        	return false;
+                }
+                else if(nation.val()==""){
+        	alert("please enter Nationality");
+        	nation.focus();
+        	return false;
+                }
+                else{
+        	$("#twotab").show();
+		$("#onetab").hide();
+		$("#one").prop("checked", false);
+		$("#two").prop("checked", true);
+                }
+
+	})
+
+	$("#two").click(function(){
+	       var first_name = $("#first_name");
+	       var last_name = $("#last_name");
+	       var date=$("#date");
+	       var citi=$("#citi");
+	       var nation=$("#nation");
+
+                if(first_name.val()=="" && last_name.val()=="" && date.val()=="" && citi.val()=="" && nation.val()==""){
+        	alert("please fillup all field");
+        	return false;
+                 }
+
+                else{
+        	alert("please click Next");
+        	return false;
+                }
+
+	})
+                 //---------Second Radio Button--------//
+
+     if($("#two").prop("checked")== true){
+      $("#threetab").hide();
+      $("#twotab").show();
+      $("#onetab").hide();
+      $("#fourtab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").hide();
+
+    }
+    $("#two").click(function(){
+      $("#threetab").hide();
+      $("#twotab").show();
+      $("#onetab").hide();
+      $("#fourtab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").hide();
+
+    })
+    $("#twotab-button").click(function(){
+      var add= $("#address");
+      var addd=$("#address1");
+      var state=$("#state");
+      var desh=$("#country");
+      var pin=$("#pincode");
+      var phone=$("#phoneno");
+      var gmail=$("#mail");
+      var mailvalue=gmail.val();
+      var atpos=mailvalue.indexOf('@');
+      var dotpos=mailvalue.lastIndexOf('.');
+      var fonevalue=phone.val();
+      var codeval=pin.val();
+
+      if (add.val()=="") {
+        alert("Give your present Address");
+        add.focus();
+        return false;
+      }
+      else if (addd.val()=="") {
+        alert("Give your permanent Address");
+        addd.focus();
+        return false;
+      }
+      else if (state.val()=="") {
+        alert("Write your State Name");
+        state.focus();
+        return false;
+      }
+      else if (desh.val()=="") {
+        alert("Give your Country name");
+        desh.focus();
+        return false;
+      }
+      else if (pin.val()=="") {
+        alert("Give your Present Address pincode");
+        pin.focus();
+        return false;
+      }
+      else if(codeval.length<5 && codeval.length>6){
+          alert("Give Valid pincode");
+          pin.focus();
+          return false;
+        }
+      else if (phone.val()=="") {
+        alert("Give your Valid Phone number");
+        phone.focus();
+        return false;
+      }
+      else if(fonevalue.length<10 && fonevalue.length>12){
+          alert("Give Valid phone number");
+          telefone.focus();
+          return false;
+        }
+      else if (gmail.val()=="") {
+        alert("Give your Email Id");
+        addd.focus();
+        return false;
+      }
+       else if(atpos<1 || dotpos < atpos + 2 || dotpos + 2 >= mailvalue.length)
+       {
+          alert("Please enter valid Email Id");
+          gmail.focus();
+          return false;
+       }
+      else{
+        $("#threetab").show();
+        $("#three").prop("checked", true);
+         $("#twotab").hide();
+      $("#two").prop("checked", false);
+      
+      
+      }
+    })
+    $("#phoneno").keyup(function(event){
+                var phone= $("#phoneno");
+                var charcode=event.keyCode;
+                var str=phone.val();
+                // alert(charcode);
+        if (charcode != 61 && charcode != 8 && charcode != 16 && charcode != 107 && charcode != 48 && charcode != 49 
+                && charcode != 50 && charcode != 51 && charcode != 52 && charcode != 53 && charcode != 54 && charcode != 55
+                && charcode != 56 && charcode != 57 && charcode != 96 && charcode != 97 && charcode != 98 && charcode != 99 
+                && charcode != 100 && charcode != 101 && charcode != 102 && charcode != 103 && charcode != 104 && charcode != 105
+                && charcode != 107 )
+        {
+                alert("Please enter only number");
+                phone.val(str.substr(0, str.length -8));
+                return false;
+        }
+        })
+    $("#pincode").keyup(function(event){
+                var pin= $("#pincode");
+                var charrcode=event.keyCode;
+                var strr=pin.val();
+                // alert(charcode);
+        if (charrcode != 61 && charrcode != 8 && charrcode != 16 && charrcode != 107 && charrcode != 48 && charrcode != 49 
+                && charrcode != 50 && charrcode != 51 && charrcode != 52 && charrcode != 53 && charrcode != 54 && charrcode != 55
+                && charrcode != 56 && charrcode != 57 && charrcode != 96 && charrcode != 97 && charrcode != 98 && charrcode != 99 
+                && charrcode != 100 && charrcode != 101 && charrcode != 102 && charrcode != 103 && charrcode != 104 && charrcode != 105
+                && charrcode != 107 )
+        {
+                alert("Please enter only number");
+                pin.val(strr.substr(0, strr.length -6));
+                return false;
+        }
+        })
+    $("#sameas").click(function(){
+                var add=$("#address");
+                var addd=$("#address1");
+                var sameas=$("#sameas");
+                if (sameas.prop("checked")==true) {
+                        addd.val(add.val());
+                }
+                else{
+                        addd.val("");
+                }
+        })
+        $("#address1").keyup(function(){
+                var add=$("#address");
+                var addd=$("#address1");
+                var sameas=$("#sameas");
+                if (addd.val() == add.val()){
+                        sameas.prop("checked", true);
+                }
+                else{
+                        sameas.prop("checked", false);
+                }       
+        })
+
+     $("#three").click(function(){
+     var add= $("#address");
+      var addd=$("#address1");
+      var state=$("#state");
+      var desh=$("#country");
+      var pin=$("#pincode");
+      var phone=$("#phoneno");
+      var gmail=$("#mail");
+
+    if(add.val()=="" && addd.val()=="" && state.val()=="" && desh.val()=="" && pin.val()=="" &&
+     phone.val()=="" && gmail.val()=="")
+        {
+          alert("Please fillup all field");
+         return false;
+        }
+        else{ 
+          alert("please click Next");
+                return false;    
+        }
+    })
+      //---------Three Radio Button--------//
+     if($("#three").prop("checked")== true){
+      $("#fourtab").hide();
+      $("#threetab").show();
+      $("#onetab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").hide();
+      $("#twotab").hide();
+
+
+    }
+    $("#three").click(function(){
+       $("#fourtab").hide();
+      $("#threetab").show();
+      $("#onetab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").hide();
+      $("#twotab").hide();
+
+    })
+    $("#threetab-button").click(function(){
+                var course=$("#course");
+                var univ=$("#univ");
+
+                 if (course.val()=="") {
+                alert("Enter Graduate/Diploma/Master course");
+                course.focus();
+                return false;
+                }
+                else if(univ.val()==""){
+                alert("Enter University/College");
+                univ.focus();
+                return false;
+                }
+                 else{
+                $("#fourtab").show();
+                $("#threetab").hide();
+                $("#three").prop("checked", false);
+                $("#four").prop("checked", true);
+                }
+        })
+    $("#four").click(function(){
+        var course=$("#course");
+        var univ=$("#univ");
+
+        if(course.val()=="" && univ.val()=="")
+        {
+                alert("Please enter all fields");
+                return false;         
+        }
+        else{
+                alert("Please Click Next");
+                return false;
+        }
+    })
+     //---------Four Radio Button--------//
+
+    if($("#four").prop("checked")== true){
+      $("#fourtab").show();
+      $("#threetab").hide();
+      $("#onetab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").hide();
+      $("#twotab").hide();
+
+
+    }
+    $("#four").click(function(){
+      $("#fourtab").show();
+      $("#threetab").hide();
+      $("#onetab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").hide();
+      $("#twotab").hide();
+
+    })
+    $("#fourtab-button").click(function(){
+                var yoe=$("#yoe");
+                var sector=$("#sector");
+
+                 if (yoe.val()=="") {
+                alert("Mention it in months");
+                yoe.focus();
+                return false;
+                }
+                else if(sector.val()==""){
+                alert("Industry/IT sector Name");
+                sector.focus();
+                return false;
+                }
+                 else{
+                $("#fivetab").show();
+                $("#fourtab").hide();
+                $("#four").prop("checked", false);
+                $("#five").prop("checked", true);
+                }
+        })
+    $("#five").click(function(){
+        var yoe=$("#yoe");
+        var sector=$("#sector");
+
+        if(yoe.val()=="" && sector.val()=="")
+        {
+                alert("Please enter all fields");
+                return false;         
+        }
+        else{
+                alert("Please Click Next");
+                return false;
+        }
+    })
+
+
+    if($("#five").prop("checked")== true){
+      $("#fourtab").hide();
+      $("#threetab").hide();
+      $("#onetab").hide();
+      $("#fivetab").show();
+      $("#sixtab").hide();
+      $("#twotab").hide();
+
+
+    }
+    $("#five").click(function(){
+       $("#fourtab").hide();
+      $("#threetab").hide();
+      $("#onetab").hide();
+      $("#fivetab").show();
+      $("#sixtab").hide();
+      $("#twotab").hide();
+
+
+    })
+    $("#fivetab-button").click(function(){
+                var lang=$("#lang");
+                var skill=$("#skill");
+
+                 if (lang.val()=="") {
+                alert("Language/Spoken");
+                lang.focus();
+                return false;
+                }
+                else if(skill.val()==""){
+                alert("IT skills");
+                skill.focus();
+                return false;
+                }
+                 else{
+                $("#sixtab").show();
+                $("#fivetab").hide();
+                $("#five").prop("checked", false);
+                $("#six").prop("checked", true);
+                }
+        })
+    $("#six").click(function(){
+        var lang=$("#lang");
+        var skill=$("#skill");
+
+        if(lang.val()=="" && skill.val()=="")
+        {
+                alert("Please enter all fields");
+                return false;         
+        }
+        else{
+                alert("Please Click Next");
+                return false;
+        }
+    })
+
+    if($("#six").prop("checked")== true){
+      $("#fourtab").hide();
+      $("#threetab").hide();
+      $("#onetab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").show();
+      $("#twotab").hide();
+
+
+    }
+    $("#six").click(function(){
+        $("#fourtab").hide();
+      $("#threetab").hide();
+      $("#onetab").hide();
+      $("#fivetab").hide();
+      $("#sixtab").show();
+      $("#twotab").hide();
+
+
+    })
+    $("#sixtab-button").click(function(){
+                var program=$("#program");
+                var work=$("#work");
+                var loc=$("#loc");
+                var day=$("#day");
+                var hour=$("#hour");
+
+                 if (program.val()=="") {
+                alert("Ex-Event Mangament,Photography,Teaching");
+                program.focus();
+                return false;
+                }
+                else if(work.val()==""){
+                alert("Yes/No");
+                work.focus();
+                return false;
+                }
+                else if(loc.val()==""){
+                alert("Enter the place");
+                loc.focus();
+                return false;
+                }
+                else if(day.val()==""){
+                alert("In Numbers");
+                day.focus();
+                return false;
+                }
+                else if(hour.val()==""){
+                alert("In Numbers");
+                hour.focus();
+                return false;
+                }
+               
+        })
+
+  })
+
+
+</script>
+
+
+</body>
+</html>
